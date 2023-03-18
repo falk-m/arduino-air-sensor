@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  lamp_apache_php8:
+    hostname: ${DOMAIN}
+    image: oberd/php-8.1-apache:latest
+    ports:
+      - ${APACHE_PORT}:80
+    volumes:
+      - ${PWD}/Webserver/:/var/www/html/
+      - ${PWD}/WebserverLog/:/var/log/apache2/
